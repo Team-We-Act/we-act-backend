@@ -25,7 +25,8 @@ class Classes(db.Model):
     def __init__(self, className, subject):
         self.className = className
         self.subject = subject
-
+    def toJSONString(self):
+        return '{'+'className:'+self.className+',subject'+self.subject+'}'
 
 class Lecture(db.Model):
     lectureId = db.Column(db.Integer, primary_key=True)

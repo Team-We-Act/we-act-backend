@@ -1,6 +1,6 @@
 import os
 import config
-from flask import Flask, render_template, json, request,jsonify
+from flask import Flask, render_template, json, request, jsonify, make_response
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import requests
@@ -77,16 +77,16 @@ def create_app(test_config=None):
     # className=request.form.to_dict('className')
     className=request.json.get('className')
     subject=request.json.get('subject')
-    tutorId=request.json.get('tutorId')
-    if not (className and subject and tutorId):
+    # tutorId=request.json.get('tutorId')
+    if not (className and subject ):
       return jsonify({'error':'No arguments'}), 400
 
-    classObj=Classes()
-    classObj.className=className
-    classObj.subject=subject
-    classObj.tutorId=tutorId
+    classObj=Classes(className,subject )
+    # classObj.tutorId=tutorId
+
     classesList.append(classObj)
-    return jsonify(classObj),201
+    return (classObj.toJSONString()), 201
+    #todo: classesList를 db에 sync하는
 
   # @app.route(base_url+'classes')
   # quiz는 get 
