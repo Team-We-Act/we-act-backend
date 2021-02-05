@@ -3,41 +3,47 @@ from . import db
 
 class Student(db.Model):
     userId = db.Column(db.Integer, primary_key=True)
-    pw = db.Column(db.String(20), nullable=False)
-    classId = db.Column(db.Integer)
+    userName = db.Column(db.String(20), nullable=False)
+
+    def __init__(self, userName):
+        self.userName = userName
 
 
 class Tutor(db.Model):
     tutorId = db.Column(db.Integer, primary_key=True)
-    pw = db.Column(db.String(20), nullable=False)
-    classId = db.Column(db.Integer)
+    tutorName = db.Column(db.String(20), nullable=False)
+
+    def __init__(self, tutorName):
+        self.tutorName = tutorName
 
 
 class Classes(db.Model):
     classId = db.Column(db.Integer, primary_key=True)
     className = db.Column(db.String(20), nullable=True)
     subject = db.Column(db.String(20), nullable=True)
-    tutorId = db.Column(db.Integer)
-    students = db.relationship('Student', backref='classes')
-    tutors = db.relationship('Tutor', backref='classes')
-    lectures = db.relationship('Lecture', backref='classes')
+
+    def __init__(self, className, subject):
+        self.className = className
+        self.subject = subject
 
 
 class Lecture(db.Model):
     lectureId = db.Column(db.Integer, primary_key=True)
-    classId = db.Column(db.Integer)
     title = db.Column(db.String(20), nullable=True)
-    content = db.Column(db.LargeBinary, nullable=True)
-    quizs = db.relationship('Quiz', backref='lecture',)
-    # one-to-one relationship
+    content = db.Column(db.String(500), nullable=True)
+
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
 
 
 class Quiz(db.Model):
     quizId = db.Column(db.Integer, primary_key=True)
-    lectureId = db.Column(db.Integer)
-    question = db.Column(db.String(30), nullable=True)
-    answer = db.Column(db.String(30), nullable=True)
-    a1 = db.Column(db.String(30), nullable=True)
-    a2 = db.Column(db.String(30), nullable=True)
-    a3 = db.Column(db.String(30), nullable=True)
-    a4 = db.Column(db.String(30), nullable=True)
+    question = db.Column(db.String(50), nullable=True)
+    answer = db.Column(db.String(50), nullable=True)
+    response = db.Column(db.String(50), nullable=True)
+
+    def __init__(self, question, answer, response):
+        self.question = question
+        self.answer = answer
+        self.response = response
