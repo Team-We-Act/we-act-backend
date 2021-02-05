@@ -1,0 +1,3 @@
+[console_scripts]
+alembic-db = alembic_migrate.cli:db
+
