@@ -32,5 +32,9 @@ def create_app(test_config=None):
   @app.route('/register_form_volunteer')
   def hello_register_volunteer():
     return render_template('register_form_volunteer.html')
+    
+  @app.route('/register_form_recipient')
+  def hello_register_participant():
+    return render_template('register_form_recipient.html')
 
   return app

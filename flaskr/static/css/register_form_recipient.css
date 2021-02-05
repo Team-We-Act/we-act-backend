@@ -1,8 +1,8 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --mdc-theme-primary: #ffffff;   /* Primary color theme */
-  font-family: 'NanumGothic';  /* Default font family */
+  font-family: 'Poppins';  /* Default font family */
 }
 
 body {
@@ -47,7 +47,7 @@ body {
 
 .form-label {
   height: 17px;
-  font-family: NanumGothic;
+  font-family: Poppins;
   font-size: 15px;
   font-weight: bold;
   font-stretch: normal;
@@ -70,7 +70,7 @@ body {
   border: solid 1px #7f7f7f;
   background-color: #ffffff;
   outline: none;
-  font-family: NanumGothic;
+  font-family: Poppins;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
@@ -83,7 +83,7 @@ body {
 
 .form-input::placeholder {
   height: 17px;
-  font-family: NanumGothic;
+  font-family: Poppins;
   padding: 8px 0px;
   font-size: 15px;
   font-weight: normal;
@@ -122,7 +122,6 @@ body {
 }
 
 #submit-button {
-  font-size: 15px;
   height: 46px;
   margin-top: 40px;
   padding: 14px 33px 15px 30px;
@@ -132,6 +131,7 @@ body {
   background: linear-gradient(45deg, #2196F3 30%, #21cbf3 90%);
   box-shadow: 0 3px 5px 2px rgba(33, 203, 243, .3);
   color: white;
+  font-size: 15px;
 }
 
 #submit-button:hover {
