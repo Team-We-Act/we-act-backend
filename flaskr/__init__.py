@@ -35,6 +35,15 @@ def create_app(test_config=None):
   @app.route('/register_form_recipient')
   def hello_register_participant():
     return render_template('register_form_recipient.html')
+  
+  @app.route('/code_success', methods=['POST'])
+  def hello_code_creation_success():
+    if request.method == 'POST':
+      data = request.form.to_dict(flat=True)
+      print("crud.py", data)
+      code_value=data['type']
+
+    return render_template('code_success.html', code_value=code_value)
 
   @app.route(base_url + '/classes/', methods=['POST'])
   def postClasses():

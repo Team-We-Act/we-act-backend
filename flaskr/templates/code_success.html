@@ -1,19 +1,19 @@
 <html>
   <head>
     <title>We Act</title>
-    <link rel="stylesheet" media="screen and (min-width: 500px)" href="../static/css/index.css">
-    <link rel="stylesheet" media="screen and (max-width: 499px)" href="../static/css/index_small.css">
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="../static/css/code_success.css">
+    <link rel="stylesheet" media="screen and (max-width: 499px)" href="../static/css/code_success_small.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../static/js/index.js"></script>
+    <script src="../static/js/code_success.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
   <body>
     <div id="title-container">
-      <img class="logo" src="./static/images/logo.png">
-      <h2 id="title_explanation">포스트 코로나, 뉴 노멀 시대의 <b>봉사자들을 위한 플랫폼</b></h2>
+      <div id ="code_creation_success_prompt">코드 생성 완료!</div>
+      <div id ="code_value">Magic Code: <b>{{code_value}}</b></div>
       <div id="magic_code_area">
         <input class = "passive-button" id="enter-magic-code" placeholder="magic code를 입력하세요" ></input>
         <button id ="login-button" class="mdc-button mdc-button--raised material-button" onclick="location.href='./selection.html'" disabled>

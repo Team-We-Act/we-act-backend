@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 :root {
   --mdc-theme-primary: #ffffff;   /* Primary color theme */
   font-family: 'NanumGothic';  /* Default font family */
@@ -23,25 +22,30 @@ body {
   border-radius: 0px 296px 0px 0px;
 }
 
-.logo {
-  margin-top: 90px;
-  width: 308px;
-  height: 98px;
-  object-fit: contain;
-}
-
-#title_explanation {
-  height: 29px;
-  margin: 35px 0;
-  font-size: 25px;
-  font-weight: bold;
-  font-weight: normal;
+#code_creation_success_prompt {
+  margin-top: 137px;
+  height: 40px;
+  font-size: 35px;
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
   color: #1b1b1b;
+}
+
+#code_value {
+  margin-top: 20px;
+  height: 46px;
+  font-family: NanumGothic;
+  font-size: 40px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+
 }
 
 #magic_code_area {

@@ -15,17 +15,18 @@
   <body>
     <div id = "flex-container">
       <a href="/"><img id="logo" src="../static/images/logo.png"></a>
-      <form id = "form-container">
+      <form id = "form-container" action="/code_success", method="post">
         <div id = "form-contents">
+          <input type="hidden" id="type" name="type" value="recipient123">
           <label for="name_input" class="form-label">Name</label>
-          <input id="name-input" class = "form-input" placeholder="Your name, here." name="name_input">
+          <input id="name-input" class = "form-input" placeholder="Your name, here." name="name_input" required>
 
           <label for="type-input" class="form-label form-label-margin">Type</label>
           <input id="type-input" class = "form-input" placeholder="" name="type_input" value = "Recipient" disabled>
 
           <label for="gender_input" class="form-label form-label-margin">Gender</label>
           <div class = "checked-input">
-            <input type="radio" id="female" name="gender_input" value="female">
+            <input type="radio" id="female" name="gender_input" value="female" checked>
             <label for="female">Female</label>
           </div>
           <div>
@@ -33,12 +34,12 @@
             <label for="male">Male</label>
           </div>
           <label for="age_input" class="form-label  form-label-margin">Age</label>
-          <input id="age-input" class = "form-input" type="number" placeholder="Enter Age" name="age_input" min="15" max="130" >
+          <input id="age-input" class = "form-input" type="number" placeholder="Enter Age" name="age_input" min="15" max="130" required>
 
           <label for="self_intro_input" class="form-label  form-label-margin">A brief self-introduction</label>
           <input id="self-intro-input" class = "form-input" placeholder="Please type in yourself introduction" name="self_intro_input">
           <div id="submit-button-container">
-            <input type = "submit" id = "submit-button" value="Submit">
+            <input type = "submit" id = "submit-button" value="Submit" required>
           </div>
         </div>
       </form>
