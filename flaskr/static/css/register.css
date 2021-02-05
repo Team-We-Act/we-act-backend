@@ -24,7 +24,7 @@ body {
   width: 112px;
   height: 36px;
   margin: 93px auto 0px auto;
-  object-fit: contain;
+  object-fit: contain; 
 }
 
 #register-card-section {
