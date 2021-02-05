@@ -162,6 +162,13 @@ body {
   cursor: pointer;
 }
 
+#my-class-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 85px;
+  margin-left: 69px;
+}
+
 #logo {
   position: absolute;
   top: 64px;
