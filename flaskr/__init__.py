@@ -64,7 +64,12 @@ def create_app(test_config=None):
 
   @app.route('/volunteer_classes')
   def hello_volunteer_classes():
-    return render_template('volunteer_classes.html')
+    samples = [
+      {'country': '필리핀', 'subject1': '아두이노 따라잡기', 'subject2': '포토샵 일러스트 도전해보기'},
+      {'country': '우간다', 'subject1': 'MS Office 시작하기', 'subject2': '앱인벤터의 신비함'},
+      {'country': '탄자니아', 'subject1': '아두이노 고급', 'subject2': 'AutoCAD란?'},
+    ]
+    return render_template('volunteer_classes.html', contents=samples)
 
   @app.route('/recipient_classes')
   def hello_recipient_classes():
