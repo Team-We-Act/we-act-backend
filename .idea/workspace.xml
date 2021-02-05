@@ -1247,7 +1247,7 @@
       <updated>1612519092315</updated>
       <workItem from="1612519094845" duration="1129000" />
       <workItem from="1612520850183" duration="275000" />
-      <workItem from="1612521153289" duration="5392000" />
+      <workItem from="1612521153289" duration="12087000" />
     </task>
     <servers />
   </component>
@@ -1276,10 +1276,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="5" y="23" key="SettingsEditor/-1920.23.1920.1026/0.23.1440.877@0.23.1440.877" timestamp="1612521800955" />
-    <state x="-1363" y="246" width="795" height="611" key="find.popup" timestamp="1612522476071">
-      <screen x="-1920" y="23" width="1920" height="1026" />
+    <state x="418" y="207" width="597" height="522" key="find.popup" timestamp="1612531631715">
+      <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="-1363" y="246" width="795" height="611" key="find.popup/-1920.23.1920.1026/0.23.1440.877@-1920.23.1920.1026" timestamp="1612522476071" />
     <state x="418" y="214" width="596" height="522" key="find.popup/-1920.23.1920.1026/0.23.1440.877@0.23.1440.877" timestamp="1612521482651" />
+    <state x="418" y="207" width="597" height="522" key="find.popup/-1920.23.1920.1057/0.23.1440.846@0.23.1440.846" timestamp="1612531631715" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/flaskr/__init__.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
