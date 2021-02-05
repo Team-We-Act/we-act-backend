@@ -93,9 +93,25 @@ def create_app(test_config=None):
       lectures=lectures_sample
       )
 
+  @app.route('/create_new_lecture')
+  def hellp_create_new_class():
+    return render_template('create_new_lecture.html')
+
   @app.route('/recipient_classes')
   def hello_recipient_classes():
     return render_template('recipient_classes.html')
+
+  @app.route('/register_lecture', methods=['POST'])
+  def register_lecture():
+    if request.method == 'POST':
+      data = request.form.to_dict(flat=True)
+      courseTitle = data['title']
+      courseContent = data['contents']
+      courseFile = data['file']
+      print(courseTitle, courseFile, courseContent)
+      return render_template('recipient_classes.html')
+    print('fail')
+    return 
 
 
   @app.route('/classes', methods=['POST'])

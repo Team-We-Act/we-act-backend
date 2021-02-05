@@ -55,7 +55,7 @@ body {
 #enter-magic-code{
   width: 370px;
   height: 72px;
-  padding: 22px 88px 25px 28px;
+  padding: 0 28px;
   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.16); 
    border-radius: 80px;
   border: 0;

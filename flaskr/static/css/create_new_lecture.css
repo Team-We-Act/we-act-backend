@@ -1,0 +1,111 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+body {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-image: url('../images/background2.png');
+  background-size: 100%;
+}
+
+#prompt-container {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#prompt {
+  margin-top: 150px;
+  width: 900px;
+  height: 522px;
+  border-radius: 20px;
+  border: solid 5px #fca50d;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px;
+}
+
+#course-title {
+  height: 50px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 35px;
+  
+}
+
+#course-title::placeholder {
+  font-family: NanumGothic;
+  font-size: 35px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+#divider {
+  margin: 10px 0px 23px 0px;
+  padding: 0px;
+  width: 100%;
+  border-top: solid 1px #e4e4e4;
+}
+
+#course-contents {
+  margin-top: 40px;
+  width: 900px;
+  height: 270px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 30px;
+  resize: none;
+
+}
+
+#course-contents::placeholder {
+  font-family: NanumGothic;
+  font-size: 30px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+#submit-button {
+  width: 142px;
+  height: 51px;
+  border-radius: 80px;
+  background-color: #fca50d;
+  font-family: NanumGothic;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  border:none;
+  outline:none;
+  margin-top:40px; 
+}
+
+#submit-button:hover {
+  cursor: pointer;
+}
+
+#logo {
+  position: absolute;
+  top: 64px;
+  right: 64px;
+  width: 82px;
+  height: 26px;
+}

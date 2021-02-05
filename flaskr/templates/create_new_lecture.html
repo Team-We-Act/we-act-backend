@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>We Act</title>
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="../static/css/create_new_lecture.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../static/js/create_new_lecture.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body>
+    <div id = "prompt-container">
+      <form id = "prompt" action = "/register_lecture" method="POST">
+        <input type = "text" id = "course-title" name="title" placeholder = "강의 제목">
+        <hr id = "divider">
+        <input id="file-input" type="file" name="file">
+        <textarea type = "text" id = "course-contents" name="contents" placeholder = "강의 내용"></textarea>
+        <div style="display: flex; justify-content: center;">
+          <input id="submit-button" type="submit">
+        </div>
+        
+      </form>
+    </div>
+    <a href="/"><img id = "logo" src="../static/images/logo.png"></a>
+    
+  </body>
+</html>
