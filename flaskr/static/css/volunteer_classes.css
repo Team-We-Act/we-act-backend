@@ -80,8 +80,9 @@ body {
 #hr_class {
   margin: 18.5px 0 0 0;
   width: 208px;
-  height: 0;
-  border-top: solid 0.5px #aaaaaa !important;
+  height: 1px;
+  border: 0;
+  background-color: #d9dddc !important;
 }
 
 #sort-button-container {
@@ -138,7 +139,7 @@ body {
   margin-top: 46px !important;
 }
 
-.active_country_content {
+.active_content {
   font-family: NanumGothic;
   font-weight: 800 !important;
   color: #fca50d !important;
@@ -163,10 +164,176 @@ body {
 }
 
 #my-class-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 85px;
   margin-left: 69px;
+  margin-right: 64px;
+}
+
+#my-class-title {
+  font-family: NanumGothic;
+  font-size: 24px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.71;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fca50d;
+
+}
+
+
+#my-class-info {
+  display: flex;
+  align-items: center;
+  margin-top: 36px;
+}
+
+#my-class-info-contents {
+  margin-left: 22px;
+}
+
+#my-class-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.my-class-info-content {
+  margin-right: 25px;
+  font-family: NanumGothic;
+  font-size: 20px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.85;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#volunteer-image {
+  width: 67px;
+  height: 67px;
+  margin-left: 17px;
+}
+
+#my-class-info-description {
+  margin-top: 14px;
+  font-family: NanumGothic;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#create-new-class-btn {
+  height: 51px;
+  margin-left: 50px;
+  padding: 14px 20px;
+  border-radius: 80px;
+  background-color: #ffffff;
+  font-family: NanumGothic;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fca50d;
+  outline:none; 
+  border: solid 1px #fca50d;
+}
+
+#create-new-class-btn:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #fca50d;
+
+}
+
+
+
+#my-class-hr {
+  margin: 31px 0 62px 0;
+  height: 4px;
+  border: 0;
+  background-color: #d9dddc !important;
+}
+
+#lecture-info-card-container {
+  overflow-y: auto;
+  display: flex; 
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0px 66px 0px 30px;
+}
+
+.lecture-card {
+  width: 283px;
+  height: 264px;
+  margin: 0 35px 35px 0;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #f6f6f6;
+}
+
+.lecture-card:hover {
+  background-color: #fee8c2 !important;
+  cursor: pointer;
+
+}
+
+.lecture-card-container {
+  padding: 27px;
+}
+
+.lecture-card-number {
+  font-family: NanumGothic;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.lecture-card-title {
+  margin-top: 15px;
+  font-family: NanumGothic;
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.lecture-card-description {
+  width: 230px;
+  height: 63px;
+  margin-top: 80px;
+  font-family: NanumGothic;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: -0.15px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1b1b1b;
 }
 
 #logo {
