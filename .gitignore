@@ -1,4 +1,10 @@
-.idea\
-.venv\
-flaskr\__pycache__
-flaskr/__pycache__
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea/
+__pycache__/

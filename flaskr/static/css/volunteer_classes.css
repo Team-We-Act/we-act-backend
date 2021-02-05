@@ -1,0 +1,31 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+body {
+  margin: 0px;
+}
+
+#body-flex-container {
+  display: flex;
+}
+
+#content-container {
+  padding: 36px 29px;
+  height: 100%;
+  opacity: 0.25;
+  background-color: #fca50d;
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+}
+
+.flag {
+  width: 38px;
+  height: auto;
+  margin: 0px 20px 0px 0px;
+  object-fit: contain;
+}
