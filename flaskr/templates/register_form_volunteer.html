@@ -17,17 +17,29 @@
       <a href="/"><img id="logo" src="../static/images/logo.png"></a>
       <form id = "form-container">
         <div id = "form-contents">
-          <label for="name_input" class="form-label">Name</label>
-          <input id="name-input" class = "form-input" placeholder="Input your name" name="name_input"></input>
+          <label for="name_input" class="form-label">이름</label>
+          <input id="name-input" class = "form-input" placeholder="이름을 입력하세요." name="name_input">
 
-          <label for="name_input" class="form-label form-label-margin">Name</label>
-          <input id="name-input" class = "form-input" placeholder="Input your name" name="name_input"></input>
+          <label for="type-input" class="form-label form-label-margin">회원 종류</label>
+          <input id="type-input" class = "form-input" placeholder="봉사자" name="type_input" value = "봉사자" disabled>
 
-          <label for="name_input" class="form-label  form-label-margin">Name</label>
-          <input id="name-input" class = "form-input" placeholder="Input your name" name="name_input"></input>
+          <label for="gender_input" class="form-label form-label-margin">성별</label>
+          <div class = "checked-input">
+            <input type="radio" id="female" name="gender_input" value="female">
+            <label for="female">여자</label>
+          </div>
+          <div>
+            <input type="radio" id="male" name="gender_input" value="male">
+            <label for="male">남자</label>
+          </div>
+          <label for="age_input" class="form-label  form-label-margin">나이</label>
+          <input id="age-input" class = "form-input" type="number" placeholder="나이를 입력하세요." name="age_input" min="15" max="130" >
 
-          <label for="self_intro_input" class="form-label form-label-margin">Name</label>
-          <input id="self-intro-input" class = "form-input"  placeholder="자기소개를 입력하세요. " name="self_intro_input"></input>
+          <label for="self_intro_input" class="form-label  form-label-margin">자기소개</label>
+          <input id="self-intro-input" class = "form-input" placeholder="자기소개를 입력하세요." name="self_intro_input">
+          <div id="submit-button-container">
+            <input type = "submit" id = "submit-button" value="완료">
+          </div>
         </div>
       </form>
     </div>
