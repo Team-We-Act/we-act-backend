@@ -10,12 +10,12 @@ window.onload = function(){
     if (volunteer_card.classList.contains('passive-card')) {
       $('#volunteer-card').removeClass("passive-card")
       $('#volunteer-card').addClass('volunteer-card-active');
-      document.getElementById("volunteer-card__image").src = "./assets/volunteer_active.png";
+      document.getElementById("volunteer-card__image").src = "../static/images/volunteer_active.png";
     }
     if (recipient_card.classList.contains('recipient-card-active')) {
       $('#recipient-card').removeClass("recipient-card-active")
       $('#recipient-card').addClass('passive-card');
-      document.getElementById("recipient-card__image").src = "./assets/recipient.png";
+      document.getElementById("recipient-card__image").src = "../static/images/recipient.png";
     }
     next_button.disabled = false;
   });
@@ -25,18 +25,18 @@ window.onload = function(){
       if (volunteer_card.classList.contains('volunteer-card-active')) {
         $('#volunteer-card').removeClass("volunteer-card-active");
         $('#volunteer-card').addClass('passive-card');
-        document.getElementById("volunteer-card__image").src = "./assets/volunteer.png";
+        document.getElementById("volunteer-card__image").src = "../static/images/volunteer.png";
       }
       if (recipient_card.classList.contains('passive-card')) {
         $('#recipient-card').removeClass("passive-card");
         $('#recipient-card').addClass('recipient-card-active');
-        document.getElementById("recipient-card__image").src = "./assets/recipient_active.png";
+        document.getElementById("recipient-card__image").src = "../static/images/recipient_active.png";
       }
       next_button.disabled = false;
 
   });
 
   $('#next-button').on('click', function(){
-    location.href = './register_form_' + savedVal + '.html'
+    location.href = './register_form_' + savedVal
   });
 }

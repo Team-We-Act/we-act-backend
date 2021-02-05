@@ -26,23 +26,12 @@ def create_app(test_config=None):
   def hello():
       return render_template('index.html')
 
-  @app.route('/hackathon')
-  def return_hackathon():
-    mentors = [
-      {'id': 0, 'name': 'Barbara Coco', 'occupation': 'AI researcher', 'summary': 'Working for social equity since 2043'},
-      {'id': 1, 'name': 'Inbar Amaliya', 'occupation': 'AI researcher', 'summary': 'Hello, world!'},
-      {'id': 2, 'name': 'Jakab Norberto', 'occupation': 'AI developer', 'summary': 'Hello, aerok..!'},
-      {'id': 3, 'name': 'Methodius Onesimos', 'occupation': 'Policy maker', 'summary': 'Let us do our best together! :)'}
-    ]
-    samples = [
-      {'id': 0, 'title': 'Impressive Work 💎', 'author': 'author_0', 'url': 'static/images/sample1.png'},
-      {'id': 1, 'title': 'Magnificent Work 🔥', 'author': 'author_1', 'url': 'static/images/sample2.png'},
-      {'id': 2, 'title': 'Quintessential Work', 'author': 'author_2', 'url': 'static/images/sample3.png'},
-      {'id': 3, 'title': 'Phenomenal Work', 'author': 'author_3', 'url': 'static/images/sample4.png'},
-      {'id': 4, 'title': 'Hardworking :) 👷', 'author': 'author_4', 'url': 'static/images/sample5.png'},
-      {'id': 5, 'title': 'Brilliant Work ✨', 'author': 'author_5', 'url': 'static/images/sample6.png'},
-    ]
-    print(mentors)
-    return render_template('hackathon.html', mentors=mentors, samples=samples)
+  @app.route('/register')
+  def hello_register():
+    return render_template('register.html')
+
+  @app.route('/register_form_volunteer')
+  def hello_register_volunteer():
+    return render_template('register_form_volunteer.html')
 
   return app
