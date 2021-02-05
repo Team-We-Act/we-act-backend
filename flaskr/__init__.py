@@ -8,8 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 migrate = Migrate()
 base_url = '/'
-#flask_restx와 SWagger
-# @app.route()
+
 
 def create_app(test_config=None):
   app = Flask(__name__, instance_relative_config=True)
