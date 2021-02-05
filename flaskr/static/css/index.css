@@ -1,0 +1,151 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+body {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-image: url('../images/background-main@3x.png');
+  background-size: 100%;
+}
+
+#title-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 582px;
+  padding: 0px 124px;
+  background-color: #ffffff;
+  width: 900px;
+  border-radius: 0px 296px 0px 0px;
+}
+
+.logo {
+  margin-top: 90px;
+  width: 308px;
+  height: 98px;
+  object-fit: contain;
+}
+
+#title_explanation {
+  height: 29px;
+  margin: 35px 0;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#magic_code_area {
+  margin: 100px 0 0 0;
+}
+
+#enter-magic-code{
+  width: 370px;
+  height: 72px;
+  padding: 22px 88px 25px 28px;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.16); 
+   border-radius: 80px;
+  border: 0;
+  background-color: #ffffff;
+  outline: none;
+  font-size: 22px;
+  line-height: 1.41;
+  font-family: NanumGothic;
+
+}
+
+#enter-magic-code::placeholder {
+  font-family: NanumGothic;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+#login-button {
+  width: 204px;
+  height: 72px;
+  margin: 0 0 0 20px;
+  padding: 21px 60px;
+  border-radius: 80px;
+  border: 0px;
+  outline: none;
+}
+
+#login-button:disabled {
+  background: #e4e4e4;
+  cursor: not-allowed;
+}
+
+.active-button {
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.active-button:hover {
+  cursor: pointer;
+
+}
+#login-button__label {
+  line-height: 1.21;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+#register_area {
+  margin: 25px 0 0 0;
+}
+
+#prompt-text {
+  margin: 0;
+  padding: 0;
+  height: 23px;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#register-text {
+  margin: 0 0 0 10px;
+  height: 20px;
+  font-weight: bold;
+  font-family: NanumGothic;
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: normal;
+  text-decoration: underline;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fca50d;
+}
+
+#register-text:hover {
+  cursor: pointer;
+
+}

@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+body {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-image: url('../images/background2@2x.png');
+  background-size: 100%;
+}
+
+#flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+#logo {
+  width: 112px;
+  height: 36px;
+  margin: 93px auto 0px auto;
+  object-fit: contain;
+}
+
+#form-container {
+  margin-top: 83px;
+  width: 485px;
+  height: 598px;
+  box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.16);
+  border: solid 0.5px #9d9d9d;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+#form-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 45px;
+}
+
+.form-label {
+  width: 28px;
+  height: 17px;
+  font-family: NanumGothic;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1b1b1b;
+}
+
+.form-label-margin {
+  margin-top: 23px;
+}
+
+.form-input {
+  margin-top: 10px;
+  height: 42px;
+  padding: 20px;
+  border-radius: 5px;
+  border: solid 1px #7f7f7f;
+  background-color: #ffffff;
+  outline: none;
+
+  font-family: NanumGothic;
+  padding: 8px 0px;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.form-input::placeholder {
+  height: 17px;
+  font-family: NanumGothic;
+  padding: 8px 0px;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+#name-input {
+  width: 190px;
+}

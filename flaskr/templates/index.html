@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Missing Semester</title>
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="./static/css/index.css">
+    <link rel="stylesheet" media="screen and (max-width: 499px)" href="./static/css/index_small.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body>
+    <div id="title-container">
+      <img class="logo" src="./static/images/logo.png">
+      <h2 id="title_explanation">포스트 코로나, 뉴 노멀 시대의 <b>봉사자들을 위한 플랫폼</b></h2>
+      <div id="magic_code_area">
+        <input class = "passive-button" id="enter-magic-code" placeholder="magic code를 입력하세요" ></input>
+        <button id ="login-button" class="mdc-button mdc-button--raised material-button" onclick="location.href='./selection.html'" disabled>
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" id="login-button__label">로그인</span>
+        </button>
+      </div>
+      <div id = "register_area">
+        <span id = "prompt-text" >계정이 없으신가요?</span>
+        <span id = "register-text" onclick="location.href='./register.html'">회원가입</span>
+      </div>
+    </div>
+  </body>
+</html>

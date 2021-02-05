@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+
+body {
+  margin: 0px;
+  padding: 0px 50px;
+  background-size: cover;
+}
+
+.logo {
+  margin-top: 320px;
+  width: 197x;
+  height: 63px;
+  object-fit: contain;
+}
+
+#title_explanation {
+  height: 31px;
+  margin: 15px 0 0 0;
+  font-size: 16px;
+  width: 279px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#magic_code_area {
+  margin: 80px 0 0 0;
+}
+
+#enter_magic_code {
+  width: 160px; 
+  height: 39px;
+  padding: 14px 37px 13px 14px;
+  border-radius: 80px;
+  margin-right: 11px;
+  border: 0;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow:0 0 5px 2px rgba(0,0,0,0.06);
+  font-size: 10px;
+  line-height: 2.67;
+  font-family: NanumGothic;
+
+}
+
+#enter_magic_code::placeholder {
+  font-family: NanumGothic;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+
+
+#login-button {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+  width: 104px;
+  height: 39px;
+  padding: 10px 25px;
+  border-radius: 80px;
+  border: 0px;
+  outline: none;
+}
+
+#login-button:hover {
+  cursor: pointer;
+}
+
+#login-button__label {
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+#register_area {
+  margin: 21px 0 0 0;
+}
+
+#prompt-text {
+  margin: 0;
+  padding: 0;
+  height: 19px;
+  margin: 0 10px 0 0;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+#register-text {
+  margin: 0 0 0 13px;
+  height: 19px;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: underline;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fca50d;
+}
+
+#register-text:hover {
+  cursor: pointer;
+}

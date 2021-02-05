@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: alembic-migrate
+Version: 2.5.9.dev0
+Summary: A framework-independent fork of flask-migrate.
+Home-page: https://github.com/withmehealth/alembic-migrate
+Author: Filip Dimitrovski
+Author-email: filipdimitrovski22@gmail.com
+License: MIT
+Description: alembic-migrate
+        =============
+        
+        alembic-migrate is a framework-independent fork of flask-migrate.
+        
+        Installation
+        ------------
+        
+        To install, run `pip install alembic-migrate`
+        
+        Usage
+        -----
+        
+        Create the following file structure:
+        
+        ```bash
+        model/
+          ├── __init__.py
+          ├── base.py
+          ├── book.py 
+        ```
+        
+        Then declare your SQLAlchemy Base and connection string in `model/base.py`.
+        *Note: the connection string doesn't need to match your
+        app's DB connection, it's only used for migrations.*
+        
+        ```python
+        # model/base.py
+        from sqlalchemy.ext.declarative import declarative_base
+        
+        Base = declarative_base()
+        
+        def get_base():
+            return {'base': Base, 'sqlalchemy_url': 'sqlite:///demo.db'}
+        ```
+        
+        Let's add a model in `model/book.py`:
+        ```python
+        from .base import Base
+        from sqlalchemy import Integer, String, Column
+        
+        class Book(Base):
+            __tablename__ = 'books'
+            name = Column(String, primary_key=True)
+            year = Column(Integer)
+        ```
+        
+        Now `cd ..` so that you are out of the model package and run:
+        * `alembic-db init` to setup the template
+        * `alembic-db migrate` to create a migration
+        
+        You can also check out the example folder in this repo.
+        
+        ### Configuring base module
+        
+        The base module contains `get_base() -> dict`. By default `model.base` is used but you can change the environment variable:
+        ```python
+        export ALEMBIC_BASE="my_model.base"
+        ```
+        
+        ### Customize model import logic
+        
+        By default, all `*.py` files in the same package as the base will be loaded.
+        However if you want to split your models in subpackages or have custom logic
+        you should implement `import_models` inside your base module.
+        
+        ```python
+        def import_models():
+           from . import car, book
+           from .sub import other_models
+        
+        def get_base():
+            return ...
+        ```
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
