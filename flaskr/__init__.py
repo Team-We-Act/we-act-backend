@@ -42,8 +42,16 @@ def create_app(test_config=None):
       data = request.form.to_dict(flat=True)
       print("crud.py", data)
       code_value=data['type']
-
     return render_template('code_success.html', code_value=code_value)
+
+  @app.route('/volunteer_classes')
+  def hello_volunteer_classes():
+    return render_template('volunteer_classes.html')
+
+  @app.route('/recipient_classes')
+  def hello_recipient_classes():
+    return render_template('recipient_classes.html')
+
 
   @app.route(base_url + '/classes/', methods=['POST'])
   def postClasses():

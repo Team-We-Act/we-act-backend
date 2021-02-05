@@ -16,4 +16,16 @@
       login_button.disabled = false;
     }
   });
+  $('#login-button').on('click', function(){
+    let magic_value = document.getElementById("enter-magic-code").value
+    if (magic_value != 'volunteer123' && magic_value != 'recipient123') {
+      console.log('no..');
+    } else if (magic_value == 'volunteer123') {
+      location.href = './volunteer_classes'
+    } else if (magic_value == 'recipient123') {
+      location.href = './recipient_classes'
+    } else {
+      console.log('something wrong ..');
+    }
+  });
 }
