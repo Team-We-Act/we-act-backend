@@ -146,5 +146,17 @@ body {
 
 #register-text:hover {
   cursor: pointer;
+}
 
+#explanation-of-warning-code {
+  margin-top: 20px;
+  font-family: NanumGothic;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ac0000;
 }
