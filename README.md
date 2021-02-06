@@ -5,8 +5,10 @@
 SW중심대학 공동 해커톤은 디지털 뉴딜을 소프트웨어의 도전을 주제로 다른 학교의 개발자 4명과 기획자 1명이 팀을 구성하여 주제에 맞는 앱, 서비스, 라이브러리 등을 구현하는 프로젝트 진행(오픈소스 활용)
 
 ## 기술 스택
- Front-end: Vue, Vanilla
- Back-end: Flask
+-  Front-end: HTML, Jinja, CSS, Vanilla JS
+-  Back-end: Flask, Python, Firebase
+-  Notable APIs: Pyrebase, Common Computer Q/A Generator API (https://ainize.ai/Wook-2/question_generation) 
+-  SW Distribution: Heroku (CI w/ Github)
  
 ## 서버와 클라이언트 정보 전송
  JSON 형식으로 
