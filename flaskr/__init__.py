@@ -1,7 +1,7 @@
 import os
 import config
+from flask import Flask, redirect, render_template, json, request, jsonify, url_for, make_response, Response
 import pyrebase
-from flask import Flask, redirect, render_template, json, request,jsonify, url_for
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import requests
@@ -35,21 +35,8 @@ def create_app(test_config=None):
   firebase = pyrebase.initialize_app(fb_config)
   firebase_db = firebase.database()
 
-  @app.route('/test')
-  def testQuiz():
-    payload = {
-      'input': 'Python is an interpreted, high-level and general-purpose programming language. Python\'s design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.[30]  Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly, procedural), object-oriented and functional programming. Python is often described as a "batteries included" language due to its comprehensive standard library.[31] '}
-    response = requests.request("POST", url, data=payload)
-    firstQA=""
-    if not response.ok==False:
-      obj=response.json()
-      firstQA={'question':obj['question']['0'] ,
-              'answer': obj['answer']['0']
-            }
 
 
-    return jsonify(firstQA)
-  
   # a simple page that says hello
   @app.route('/')
   def hello():
@@ -113,6 +100,8 @@ def create_app(test_config=None):
   def hello_recipient_classes():
     return render_template('recipient_classes.html')
 
+  from .models import Lecture
+
   @app.route('/register_lecture', methods=['POST'])
   def register_lecture():
     if request.method == 'POST':
@@ -127,27 +116,61 @@ def create_app(test_config=None):
       firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
       return redirect(url_for('.hello_volunteer_classes'))
     print('fail')
-    return 
+
+  @app.route('/lectures', methods=['POST'])
+  def postLectureQuiz():
+    title = request.json.get('title')
+    content = request.json.get('content')
+    className = request.json.get('className')
+    lecturer = request.json.get('lecturer')
+
+    if content:
+      payload = {'input': content}
+      response = requests.request("POST", url, data=payload)
+      firstQA = ""
+      if not response.ok == False:
+        obj = response.json()
+        firstQA = {'question': obj['question']['0'],
+                   'answer': obj['answer']['0']
+                   }
+      import re
+      if title:
+        new_lecture = Lecture(title, content, className, lecturer)
+        db.session.add(new_lecture)
+        db.session.commit()
+        # finalData = str.replace( "//""")
+        # new_lecture=new_lecture.toJSONString().replace("\\","")
+        return make_response(json.dumps({'lecture':re.sub("\\\\","",new_lecture.toJSONString()),'quiz':firstQA}))
+
+# @app.route('/class')
+#   def postLectureQuiz():
+#     title=request.json.get('title')
+#     content=request.json.get('content')
+#     className=request.json.get('className')
+#     lecturer=request.json.get('lecturer')
+#     if content:
+#       payload={'input':content}
+#       response=requests.request("POST",url,data=payload)
+#       firstQA=""
+#   return
 
 
   @app.route('/classes', methods=['POST'])
   def postClasses():
-
     # className=request.form.to_dict('className')
     className=request.json.get('className')
     subject=request.json.get('subject')
     tutorId=request.json.get('tutorId')
     if not (className and subject and tutorId):
       return jsonify({'error':'No arguments'}), 400
-
     classObj=Classes()
     classObj.className=className
     classObj.subject=subject
     classObj.tutorId=tutorId
     classesList.append(classObj)
     return jsonify(classObj),201
-
   # @app.route(base_url+'classes')
   # quiz는 get 
-
   return app
+
+
