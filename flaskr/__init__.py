@@ -1,5 +1,6 @@
 import os
 import config
+import pyrebase
 from flask import Flask, redirect, render_template, json, request,jsonify, url_for
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -9,6 +10,16 @@ db = SQLAlchemy()
 migrate = Migrate()
 base_url = '.'
 
+fb_config = {
+  "apiKey": "AIzaSyD_Ysrphhvywk9NQfeVAuQpmZWHoCoCg4M",
+  "authDomain": "we-act-hackathon.firebaseapp.com",
+  "databaseURL": "https://we-act-hackathon-default-rtdb.firebaseio.com",
+  "projectId": "we-act-hackathon",
+  "storageBucket": "we-act-hackathon.appspot.com",
+  "messagingSenderId": "747322680880",
+  "appId": "1:747322680880:web:6d3d2ebd784185d4adaff5",
+  "measurementId": "G-X163Z3D0Z8"
+}
 url = "https://master-question-generation-wook-2.endpoint.ainize.ai/generate"
 classesList=[]
 
@@ -21,6 +32,8 @@ def create_app(test_config=None):
   from .models import Classes
   from . import views
   app.register_blueprint(views.bp)
+  firebase = pyrebase.initialize_app(fb_config)
+  firebase_db = firebase.database()
 
   @app.route('/test')
   def testQuiz():
@@ -40,7 +53,7 @@ def create_app(test_config=None):
   # a simple page that says hello
   @app.route('/')
   def hello():
-      return render_template('index.html')
+    return render_template('index.html')
 
   @app.route('/register')
   def hello_register():
@@ -81,12 +94,11 @@ def create_app(test_config=None):
       {'title': '자바스크립트 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요! 으악 코딩 너무 힘들어요.....'},
       {'title': '타입스크립트 시작하기', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
       {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
-      {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
-      {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
-      {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용 실제 스타벅스 페이지를 똑같이 만들어요!'},
-      {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
-
     ]
+    all_lectures = firebase_db.child("lectures").get()
+    for lecture in all_lectures.each():
+      lectures_sample.append(lecture.val())
+
     return render_template('volunteer_classes.html', 
       contents=samples, 
       target=target_sample,
@@ -105,10 +117,14 @@ def create_app(test_config=None):
   def register_lecture():
     if request.method == 'POST':
       data = request.form.to_dict(flat=True)
-      courseTitle = data['title']
-      courseContent = data['contents']
-      courseFile = data['file']
-      print(courseTitle, courseFile, courseContent)
+      lectureTitle = data['title']
+      lectureContent = data['contents']
+      lectureFile = data['file']
+      pushing_data = {
+        "title": lectureTitle, 
+        "description":lectureContent,
+      }
+      firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
       return redirect(url_for('.hello_volunteer_classes'))
     print('fail')
     return 

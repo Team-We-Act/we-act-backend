@@ -307,6 +307,7 @@ body {
 
 .lecture-card-title {
   margin-top: 15px;
+  height: 23px;
   font-family: NanumGothic;
   font-size: 20px;
   font-weight: 800;
