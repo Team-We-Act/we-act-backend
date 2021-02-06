@@ -160,3 +160,29 @@ body {
   text-align: left;
   color: #ac0000;
 }
+
+#flags-container {
+  position: absolute;
+  left: 64px;
+  top: 64px;
+}
+
+.flag {
+  width: 38px;
+  height: auto;
+  margin: 0px 20px 0px 0px;
+  object-fit: contain;
+}
+
+.flag:hover {
+  cursor: pointer;
+}
+
+.flag-passive {
+  opacity: 0.4 !important;
+}
+
+.flag-active {
+  opacity: 1 !important;
+}
+

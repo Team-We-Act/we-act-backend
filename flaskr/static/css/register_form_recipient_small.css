@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'NanumGothic';  /* Default font family */
+}
+
+body {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-image: url('../images/m_background2.png');
+  background-size: 100%
+}
+
+#flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+#logo {
+  width: 112px;
+  height: 36px;
+  margin-top: 190px;
+  object-fit: contain; 
+}
+
+#form-container {
+  margin-top: 42px;
+  background-color: #ffffff;
+}
+
+#form-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0px 73px;
+}
+
+.form-label {
+  height: 17px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1b1b1b;
+}
+
+.form-label-margin {
+  margin-top: 19px;
+}
+
+.form-input {
+  margin-top: 7px;
+  height: 37px;
+  padding: 0px 20px ;
+  border-radius: 80px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+  outline: none;
+  border: 0;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.form-input::placeholder {
+  height: 17px;
+  font-family: Poppins;
+  padding: 8px 0px;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e4e4e4;
+}
+
+#name-input {
+  width: 190px;
+}
+
+#type-input {
+  background-color: #ddd;
+}
+
+#age-input {
+  width: 132px;
+}
+
+.checked-input {
+  margin-top: 10px;
+}
+
+#self-intro-input {
+  width: 250px;
+}
+
+#submit-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#submit-button {
+  height: 43px;
+  margin-top: 39px;
+  padding: 14px 33px 15px 30px;
+  border-radius: 80px;
+  border: none;
+  outline: none;
+  background: linear-gradient(45deg, #2196F3 30%, #21cbf3 90%);
+  box-shadow: 0 3px 5px 2px rgba(33, 203, 243, .3);
+  color: white;
+  font-size: 15px;
+}
+
+#submit-button:hover {
+  cursor: pointer;
+}

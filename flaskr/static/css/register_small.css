@@ -4,3 +4,105 @@
   --mdc-theme-primary: #ffffff;   /* Primary color theme */
   font-family: 'NanumGothic';  /* Default font family */
 }
+
+body {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-image: url('../images/m_background2.png');
+  background-size: 100%
+}
+
+#flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+#logo {
+  width: 112px;
+  height: 36px;
+  margin-top: 190px;
+  object-fit: contain; 
+}
+
+#register-card-section {
+  margin-top: 145px;
+  width: 312px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mdc-card-intro {
+  width:136px;
+  border-radius: 20px !important;
+}
+
+.mdc-card-intro:hover {
+  cursor: pointer;
+}
+
+.passive-card {
+  background-color: #e4e4e4 !important;
+  color: white;
+}
+
+.image-for-mdc-card-intro {
+  padding: 29px 25px 15px 25px;
+  width: 86px;
+}
+
+.exp-mdc-card-intro{
+  padding: 0px 8px 35px 8px;
+  font-size: 15px;
+  font-family: 'NanumGothic' !important;
+  text-align: center;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: inherit;
+}
+
+.volunteer-card-active {
+  background-color: #fdbf53 !important;
+  color: #000000 !important;
+}
+
+.recipient-card-active {
+  background-color: #97d484 !important;
+  color: #000000 !important;
+}
+
+#next-button {
+  margin-top: 88px;
+  width: 84px;
+  height: 43px;
+  padding: 15px 10px;
+  border-radius: 80px;
+  background-color: #fdbf53;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  outline: none;
+}
+
+#next-button:disabled {
+  background: #e4e4e4;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+#next-button__label {
+  font-family: NanumGothic;
+  font-size: 15px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.61;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
