@@ -1,10 +1,7 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 :root {
   --mdc-theme-primary: #ffffff;   /* Primary color theme */
-  font-family: 'NanumGothic';  /* Default font family */
+  font-family: 'Poppins', 'NanumGothic';  /* Default font family */
 }
 
 body {
@@ -25,42 +22,55 @@ body {
 }
 
 .logo {
-  margin-top: 90px;
-  width: 197px;
-  height: 94px;
+  margin-top: 74px;
+  width: 165px;
+  height: 52px;
   object-fit: contain;
 }
 
-#title_explanation {
-  height: 49px;
-  margin: 23px 0px 0px 0px;
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: bold;
-  font-weight: normal;
+#code_creation_success_prompt {
+  margin-top: 23px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.33;
   letter-spacing: normal;
   text-align: left;
   color: #1b1b1b;
 }
 
+#code_value {
+  margin-top: 3px;
+  height: 35px;
+  font-family: NanumGothic;
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+
+}
+
 #magic_code_area {
-  margin: 66px 0 0 0;
+  margin: 38px 0 0 0;
 }
 
 #enter-magic-code{
-  width: 160px;
-  padding: 13px 13px;
+  width: 198px;
+  height: 43px;
+  padding: 0 10px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-  border-radius: 80px;
+   border-radius: 80px;
   border: 0;
   background-color: #ffffff;
   outline: none;
   font-size: 12px;
   line-height: 1.41;
-  font-family: Poppins;
+  font-family: Poppins, NanumGothic;
+
 }
 
 #enter-magic-code::placeholder {
@@ -76,10 +86,10 @@ body {
 }
 
 #login-button {
-  width: 80px;
-  height:43px;
+  width: 100px;
+  height: 43px;
   margin: 0 0 0 10px;
-  padding: 10px 0px;
+  padding: 10px 27px;
   border-radius: 80px;
   border: 0px;
   outline: none;
@@ -110,6 +120,7 @@ body {
   text-align: center;
   color: #ffffff;
 }
+
 
 #register_area {
   margin: 20px 0 0 0;
@@ -161,29 +172,3 @@ body {
   text-align: left;
   color: #ac0000;
 }
-
-#flags-container {
-  position: absolute;
-  left: 64px;
-  top: 64px;
-}
-
-.flag {
-  width: 38px;
-  height: auto;
-  margin: 0px 20px 0px 0px;
-  object-fit: contain;
-}
-
-.flag:hover {
-  cursor: pointer;
-}
-
-.flag-passive {
-  opacity: 0.4 !important;
-}
-
-.flag-active {
-  opacity: 1 !important;
-}
-
