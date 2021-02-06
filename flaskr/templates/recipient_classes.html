@@ -4,7 +4,7 @@
   <head>
     <title>We Act</title>
     <link rel="stylesheet" media="screen and (min-width: 500px)" href="../static/css/recipient_classes.css">
-    <link rel="stylesheet" media="screen and (max-width: 499px)" href="../static/css/recipient_classes_small.css">
+    <link rel="stylesheet" media="screen and (max-width: 499px)" href="../static/css/recipient_classes.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -13,5 +13,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
   <body>
+    <div id = "flex-container"></div>
+      <img id = "dropdown-icon" src="../static/images/menu_icon.png">
+      <div id = "logo-container"><img id = "logo" src="../static/images/logo.png"></div>
+      <div id = "title" class="what-i-listen-content">My Class: <span class="active_content">A1</span> </div>
+      <div id = "language" class=" what-i-listen-content">Language: <span class="active_content">English</span></div>
+      <div id = "period" class="what-i-listen-content">Period:  <span class="active_content">Feburary 2021 ~ June 2021</span></div>
+      <div class = "hr_class"></div>
+      <div class = "card-container">
+        {% for lecture in lectures %} 
+        <div class = "lecture-card" name="{{lecture.title}}">
+          <div class = "lecture-card-container">
+            <div class = "lecture-card-number">
+              <b>Lecture #{{loop.index}}</b>,
+            </div>
+            <div class = "lecture-card-title">
+              {{lecture.title}}
+            </div>
+            <div class = "lecture-card-description">
+              {{lecture.description}}
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <p class = "i-am-empty"></p>
+        {% endfor %}
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>We Act</title>
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="../static/css/lecture_info.css">
+    <link rel="stylesheet" media="screen and (max-width: 499px)" href="../static/css/lecture_info.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../static/js/lecture_info.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body>
+    <div id = "flex-container"></div>
+      <div id = "logo-container"><img id = "logo" src="../static/images/logo.png"></div>
+      <div id = "title" class="what-i-listen-content">Current Lecture: <span class="active_content">{{lecture.title}}</span> </div>
+      <div class = "hr_class"></div>
+      <div id = "content">{{lecture.description}}</div>
+      <div class = "hr_class"></div>
+      <div id = "question">
+        <b>{{lecture.question}}</b>
+        <br>
+        After thinking carefully, <span class="active_content">
+          click me to reveal answer.
+        </span>
+      </div>
+      <div id = "answer" style="visibility:hidden;">
+        Answer is {{lecture.answer}}
+
+      </div>
+
+    </div>
+  </body>
+</html>

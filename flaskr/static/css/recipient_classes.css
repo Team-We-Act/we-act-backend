@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --mdc-theme-primary: #ffffff;   /* Primary color theme */
+  font-family: 'Poppins';  /* Default font family */
+}
+
+body {
+  max-width: 428px;
+  margin: 0px auto;
+}
+
+.flex-container {
+  margin: 0px 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+#logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#dropdown-icon {
+  position: absolute;
+  top: 50px;
+  left: 36px;
+  height: 16px;
+width:16px;
+}
+
+#logo {
+  width: 52px;
+  height: 16px;
+}
+
+#title {
+  margin-top: 53px;
+}
+
+#language {
+  margin-top: 6px;
+}
+
+#period {
+  margin-top: 6px;
+}
+
+.what-i-listen-content {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.active_content {
+  font-family: Poppins;
+  font-weight: 800 !important;
+  color: #fca50d !important;
+}
+
+.hr_class {
+  margin: 20px 0;
+  height: 1px;
+  border: 0;
+  background-color: #d9dddc !important;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.lecture-card {
+  padding: 12px;
+  width:129px;
+  height: 165px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #f6f6f6;
+  margin: 5px;
+}
+
+.lecture-card:hover {
+  cursor: pointer;
+}
+
+.lecture-card-number {
+  margin-top: 15px;
+  font-family: Poppins;
+  font-size: 11px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.lecture-card-title {
+  margin-top: 2px;
+  width: 129px;
+  height: 38px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  color: #1b1b1b;
+}
+
+.lecture-card-description {
+  width: 129px;
+  height: 44px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-family: Poppins;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1b1b1b;
+}

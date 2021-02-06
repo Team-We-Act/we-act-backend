@@ -98,7 +98,20 @@ def create_app(test_config=None):
 
   @app.route('/recipient_classes')
   def hello_recipient_classes():
-    return render_template('recipient_classes.html')
+    lecture_samples = []
+    all_lectures = firebase_db.child("lectures").get()
+    for lecture in all_lectures.each():
+      lecture_samples.append(lecture.val())
+    return render_template('recipient_classes.html', 
+      lectures=lecture_samples
+    )
+
+  @app.route('/lecture_info/<target>')
+  def get_lecture_by_targe(target):
+    lecture = firebase_db.child("lectures").child(target).get().val()
+    print(lecture)
+    return render_template('lecture_info.html', lecture=lecture)
+
 
   from .models import Lecture
 
@@ -109,11 +122,26 @@ def create_app(test_config=None):
       lectureTitle = data['title']
       lectureContent = data['contents']
       lectureFile = data['file']
-      pushing_data = {
-        "title": lectureTitle, 
-        "description":lectureContent,
-      }
-      firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
+      payload = {'input': lectureContent}
+      response = requests.request("POST", url, data=payload)
+      firstQA = ""
+      print(response)
+      if not response.ok == False:
+        obj = response.json()
+        pushing_data = {
+          "title": lectureTitle, 
+          "description":lectureContent,
+          'question': obj['question']['0'],
+          'answer': obj['answer']['0'],
+        }
+        firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
+
+      else:
+        pushing_data = {
+          "title": lectureTitle, 
+          "description":lectureContent,
+        }
+        firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
       return redirect(url_for('.hello_volunteer_classes'))
     print('fail')
 
