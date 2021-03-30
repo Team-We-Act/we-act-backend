@@ -24,17 +24,20 @@ url = "https://master-question-generation-wook-2.endpoint.ainize.ai/generate"
 classesList=[]
 
 def create_app(test_config=None):
-  app = Flask(__name__, instance_relative_config=True)
+  app = Flask(__name__,instance_relative_config=True)
   app.config.from_object(config)
     # ORM
-  db.init_app(app)
-  migrate.init_app(app, db)
-  from .models import Classes
-  from . import views
-  app.register_blueprint(views.bp)
-  firebase = pyrebase.initialize_app(fb_config)
-  firebase_db = firebase.database()
 
+  from . import db
+  db.init_app(app)
+  # migrate.init_app(app, db)
+ 
+  # from .models import Classes
+  # from . import views
+  # app.register_blueprint(views.bp)
+  # firebase = pyrebase.initialize_app(fb_config)
+  # firebase_db = firebase.database()
+  return app
 
 
   # a simple page that says hello
@@ -200,5 +203,7 @@ def create_app(test_config=None):
   # @app.route(base_url+'classes')
   # quiz는 get 
   return app
+
+
 
 
