@@ -23,18 +23,16 @@ url = "https://master-question-generation-wook-2.endpoint.ainize.ai/generate"
 classesList=[]
 
 def create_app(test_config=None):
-  flaskApp = Flask(__name__,instance_relative_config=True)
-  flaskApp.config.from_object(config)
+  app = Flask(__name__,instance_relative_config=True)
+  app.config.from_object(config)
     # ORM
   from . import db
-  db.init_app(flaskApp)
+  db.init_app(app)
   # from .models import Classes
   # from . import views
   # app.register_blueprint(views.bp)
   # firebase = pyrebase.initialize_app(fb_config)
   # firebase_db = firebase.database()
-  return flaskApp
-
 
   # a simple page that says hello
   @app.route('/')
