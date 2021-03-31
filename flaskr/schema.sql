@@ -19,6 +19,8 @@ CREATE TABLE `tb_class` (
     `duration` TEXT,
     `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
      constraint fk_teaches FOREIGN KEY (user_ID) REFERENCES tb_user(user_ID)
+     ON DELETE NO ACTION,
+       constraint fk_takes FOREIGN KEY (user_ID) REFERENCES tb_user(user_ID)
      ON DELETE NO ACTION
    
 );
