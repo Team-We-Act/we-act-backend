@@ -6,8 +6,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import requests
 # from flask_restplus import Api,Resource,fields
-db = SQLAlchemy()
-migrate = Migrate()
+sqlAlchemy = SQLAlchemy()
 base_url = '.'
 
 fb_config = {
@@ -24,20 +23,17 @@ url = "https://master-question-generation-wook-2.endpoint.ainize.ai/generate"
 classesList=[]
 
 def create_app(test_config=None):
-  app = Flask(__name__,instance_relative_config=True)
-  app.config.from_object(config)
+  flaskApp = Flask(__name__,instance_relative_config=True)
+  flaskApp.config.from_object(config)
     # ORM
-
   from . import db
-  db.init_app(app)
-  # migrate.init_app(app, db)
- 
+  db.init_app(flaskApp)
   # from .models import Classes
   # from . import views
   # app.register_blueprint(views.bp)
   # firebase = pyrebase.initialize_app(fb_config)
   # firebase_db = firebase.database()
-  return app
+  return flaskApp
 
 
   # a simple page that says hello
@@ -85,6 +81,7 @@ def create_app(test_config=None):
       {'title': '타입스크립트 시작하기', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
       {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
     ]
+    # db 의 데이터 query해서 딕셔너리 형식으로 변수
     all_lectures = firebase_db.child("lectures").get()
     for lecture in all_lectures.each():
       lectures_sample.append(lecture.val())
@@ -172,7 +169,6 @@ def create_app(test_config=None):
         # finalData = str.replace( "//""")
         # new_lecture=new_lecture.toJSONString().replace("\\","")
         return make_response(json.dumps({'lecture':re.sub("\\\\","",new_lecture.toJSONString()),'quiz':firstQA}))
-
 # @app.route('/class')
 #   def postLectureQuiz():
 #     title=request.json.get('title')
@@ -184,8 +180,6 @@ def create_app(test_config=None):
 #       response=requests.request("POST",url,data=payload)
 #       firstQA=""
 #   return
-
-
   @app.route('/classes', methods=['POST'])
   def postClasses():
     # className=request.form.to_dict('className')
