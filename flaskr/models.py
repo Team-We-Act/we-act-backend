@@ -4,6 +4,7 @@ import datetime
 class Student(db.Model):
     __tablename__ = 'student'
     studentId = db.Column(db.Integer, primary_key=True)
+    subjectId = db.Column(db.Text, db.ForeignKey('subject.subjectId'))
     name = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, nullable=False)
     password = db.Column(db.DateTime, nullable = False)
@@ -23,8 +24,8 @@ class Tutor(db.Model):
     def __repr__(self):
         return '<Tutor %r>' % self.tutorId
 
-class Subjects(db.Model):
-    __tablename__ = "subjects"
+class Subject(db.Model):
+    __tablename__ = "subject"
     subjectId = db.Column(db.Integer, primary_key=True)
     tutorId = db.Column(db.Text, db.ForeignKey('tutor.tutorId'))
     className = db.Column(db.Text)
