@@ -27,6 +27,7 @@ def create_app(test_config=None):
   app.config.from_object(config)
     # ORM
   db.init_app(app)
+
   # from .models import Classes
   # from . import views
   # app.register_blueprint(views.bp)
