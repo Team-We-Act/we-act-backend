@@ -3,11 +3,11 @@ DROP TABLE IF EXISTS tb_class;
 DROP TABLE IF EXISTS tb_lecture;
 
 
-CREATE TABLE `tb_user` (
-    `user_ID` INTEGER PRIMARY KEY AUTOINCREMENT,
-    `user_name` TEXT NOT NULL,
-    `userType` TEXT NOT NULL,
-    `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE tb_user (
+    user_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_name TEXT NOT NULL,
+    userType TEXT NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE `tb_class` (
@@ -22,7 +22,6 @@ CREATE TABLE `tb_class` (
      ON DELETE NO ACTION,
        constraint fk_takes FOREIGN KEY (user_ID) REFERENCES tb_user(user_ID)
      ON DELETE NO ACTION
-   
 );
 
 CREATE TABLE `tb_lecture` (
@@ -35,5 +34,3 @@ CREATE TABLE `tb_lecture` (
     `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     FOREIGN KEY (class_ID) REFERENCES tb_class(class_ID) ON DELETE NO ACTION
 );
-
-
