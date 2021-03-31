@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import requests
 # from flask_restplus import Api,Resource,fields
-sqlAlchemy = SQLAlchemy()
+db = SQLAlchemy()
 base_url = '.'
 
 fb_config = {
@@ -26,7 +26,6 @@ def create_app(test_config=None):
   app = Flask(__name__,instance_relative_config=True)
   app.config.from_object(config)
     # ORM
-  from . import db
   db.init_app(app)
   # from .models import Classes
   # from . import views
