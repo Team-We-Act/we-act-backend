@@ -1,41 +1,37 @@
 from . import db
 import datetime
 
-class User(db.Model):
-    __tablename__ = 'user'
-
-    userId = db.Column(db.Integer, primary_key=True)
-    userName = db.Column(db.Text, nullable=False)
-    userType = db.Column(db.Text, nullable=False)
-    created = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
-
+class Student(db.Model):
+    __tablename__ = 'student'
+    studentId = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    password = db.Column(db.DateTime, nullable = False)
+    created = db.Column(db.DateTime,nullable=False,default=datetime.datetime.now)
+  
     def __repr__(self):
-        return '<User %r>' % self.userId
+        return '<Student %r>' % self.studentId
 
-class Class(db.Model):
-    __tablename__ = 'class'
+class Tutor(db.Model):
+    __tablename__ = 'tutor'
+    tutorId = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    password = db.Column(db.Text, nullable = False)
+    created = db.Column(db.DateTime,nullable=False,default=datetime.datetime.now)
+   
+    def __repr__(self):
+        return '<Tutor %r>' % self.tutorId
 
-    classId = db.Column(db.Integer, primary_key=True)
-    userId = db.Column(db.Integer, db.ForeignKey('user.userId'))
+class Subjects(db.Model):
+    subjectId = db.Column(db.Integer, primary_key=True)
+    tutorId = db.Column(db.Text, db.ForeignKey('tutor.tutorId'))
     className = db.Column(db.Text)
     countryName = db.Column(db.Text)
     language = db.Column(db.Text)
     duration = db.Column(db.Text)
-    created = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
+    created = db.Column(db.DateTime,nullable=False,default=datetime.datetime.now)
 
     def __repr__(self):
-        return '<Class %r>' % self.classId
-
-class Lecture(db.Model):
-    __tablename__ = "lecture"
-
-    lectureId = db.Column(db.Integer, primary_key="True")
-    classId = db.Column(db.Integer, db.ForeignKey('class.classId'), nullable=False)
-    title = db.Column(db.Text, nullable="False")
-    file = db.Column(db.LargeBinary)
-    contents = db.Column(db.Text)
-    description = db.Column(db.Text, nullable=False)
-    created = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
-
-    def __repr__(self):
-        return '<Lecture %r>' % self.lectureId
+        return '<Subjects %r>' % self.subjectId
+       
