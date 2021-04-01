@@ -8,6 +8,7 @@ import requests
 db = SQLAlchemy()
 base_url = '.'
 
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 def create_app(test_config=None):
     app = Flask(__name__,instance_relative_config=True)
