@@ -22,10 +22,6 @@ def hello_volunteer_classes():
     {'title': '타입스크립트 시작하기', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
     {'title': '리액트 프로그래밍 입문', 'description': '웹앱, 웹 표준에 대해 배웁니다! 애니메이션 효과가 모두 적용된 실제 스타벅스 페이지를 똑같이 만들어요!'},
   ]
-  # db 의 데이터 query해서 딕셔너리 형식으로 변수
-  # all_lectures = firebase_db.child("lectures").get()
-  # for lecture in all_lectures.each():
-  #   lectures_sample.append(lecture.val())
 
   return render_template('volunteer_classes.html', 
     contents=samples, 
@@ -40,17 +36,12 @@ def hellp_create_new_class():
 @bp.route('/recipient_classes')
 def hello_recipient_classes():
   lecture_samples = []
-  # all_lectures = firebase_db.child("lectures").get()
 
-  # for lecture in all_lectures.each():
-    # lecture_samples.append(lecture.val())
   # return render_template('recipient_classes.html', lectures=lecture_samples)
   return render_template('recipient_classes.html')
 
 @bp.route('/lecture_info/<target>')
 def get_lecture_by_targe(target):
-  # lecture = firebase_db.child("lectures").child(target).get().val()
-  # print(lecture)
   # return render_template('lecture_info.html', lecture=lecture)
   return render_template('lecture_info.html')
 
@@ -76,14 +67,12 @@ def register_lecture():
         'question': obj['question']['0'],
         'answer': obj['answer']['0'],
       }
-      # firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
 
     else:
       pushing_data = {
         "title": lectureTitle, 
         "description":lectureContent,
       }
-      # firebase_db.child("lectures").child(lectureTitle).set(pushing_data)
     return redirect(url_for('.hello_volunteer_classes'))
   print('fail')
 
@@ -126,5 +115,3 @@ def postClasses():
   classObj.tutorId=tutorId
   classesList.append(classObj)
   return jsonify(classObj),201
-# @app.route(base_url+'classes')
-# quiz는 get 

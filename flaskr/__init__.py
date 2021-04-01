@@ -25,16 +25,11 @@ classesList=[]
 def create_app(test_config=None):
   app = Flask(__name__,instance_relative_config=True)
   app.config.from_object(config)
-    # ORM
-  db.init_app(app)
 
+  db.init_app(app)
   with app.app_context():
     db.create_all()
 
-  # firebase = pyrebase.initialize_app(fb_config)
-  # firebase_db = firebase.database()
-
-  # a simple page that says hello
   @app.route('/')
   def hello():
     return render_template('index.html')
