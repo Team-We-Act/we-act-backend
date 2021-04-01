@@ -37,6 +37,6 @@ window.onload = function(){
   });
 
   $('#next-button').on('click', function(){
-    location.href = './authorize'
+    location.href = '/authorize'
   });
 }
