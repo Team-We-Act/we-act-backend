@@ -1,4 +1,5 @@
 from flask import Blueprint,redirect
+from flask import render_template
 bp=Blueprint('user', __name__, url_prefix='/')
 
 CLIENT_SECRETS_FILE='client_secret.json'
@@ -35,7 +36,7 @@ def authorize():
   # Store the state so the callback can verify the auth server response.
     flask.session['state'] = state
 
-  return flask.redirect(authorization_url)
+    return flask.redirect(authorization_url)
 
 
 @bp.route('oauth2callback')
