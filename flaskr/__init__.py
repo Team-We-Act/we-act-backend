@@ -1,7 +1,6 @@
 import os
 import config
 from flask import Flask, redirect, render_template, json, request, jsonify, url_for, make_response, Response
-import pyrebase
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import requests
