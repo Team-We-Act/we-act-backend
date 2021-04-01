@@ -31,9 +31,6 @@ def create_app(test_config=None):
   with app.app_context():
     db.create_all()
 
-  # from .models import Classes
-  # from . import views
-  # app.register_blueprint(views.bp)
   # firebase = pyrebase.initialize_app(fb_config)
   # firebase_db = firebase.database()
 
