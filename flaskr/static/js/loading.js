@@ -6,7 +6,7 @@ window.onload = function(){
   let next_button = document.getElementById('next-button');
 
   $('#volunteer-card').on('click', function(){
-    savedVal = 'volunteer';
+    // savedVal = 'volunteer';
     if (volunteer_card.classList.contains('passive-card')) {
       $('#volunteer-card').removeClass("passive-card")
       $('#volunteer-card').addClass('volunteer-card-active');
@@ -21,7 +21,7 @@ window.onload = function(){
   });
   
   $('#recipient-card').on('click', function(){
-      savedVal = 'recipient';
+      // savedVal = 'recipient';
       if (volunteer_card.classList.contains('volunteer-card-active')) {
         $('#volunteer-card').removeClass("volunteer-card-active");
         $('#volunteer-card').addClass('passive-card');
@@ -37,6 +37,6 @@ window.onload = function(){
   });
 
   $('#next-button').on('click', function(){
-    location.href = './register_form_' + savedVal
+    location.href = './authorize'
   });
 }
