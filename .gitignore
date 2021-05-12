@@ -9,3 +9,4 @@ venv.bak/
 .idea/
 __pycache__/
 client_secret.json
+shin/
